@@ -60,7 +60,7 @@ export default function SettingsStack() {
               component = {SettingsScreen}
               options = {{
                 headerTitleAlign: 'center',
-                headerTintColor: 'black',
+                headerTintColor: 'black ',
               }}
           />
           <Stack.Screen name = "Account Details" component = {SettingsAccount} options = {{ headerTitleStyle: {color: 'white'} }}/>

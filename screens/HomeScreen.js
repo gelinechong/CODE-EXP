@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from "react-native";
 import { createStackNavigator, HeaderBackground } from "@react-navigation/stack";
 import { Ionicons } from '@expo/vector-icons';
 
@@ -26,18 +26,17 @@ function HomeScreen({ navigation }) {
     );
   };
 
-function HomeSecondScreen() {
+function HomeListScreen() {
   return (
     <View style = {styles.container}>
-        <Text> Second Page </Text>
     </View>
   );
 }
 
-function HomeThirdScreen() {
+function HomeSearchScreen() {
   return (
     <View style = {styles.container}>
-        <Text> third Page </Text>
+
     </View>
   );
 }
@@ -73,7 +72,7 @@ export default function HomeStack({ navigation }) {
               <TouchableOpacity 
                   style = {styles.button}
                   onPress = { () => 
-                  navigation.navigate("Second")
+                  navigation.navigate("List")
                   }
               >
               <Ionicons name="md-list" size={24} color="tan" style={{marginRight: 45}}/>
@@ -82,15 +81,15 @@ export default function HomeStack({ navigation }) {
               <TouchableOpacity 
                   style = {styles.button}
                   onPress = { () =>  
-                  navigation.navigate("Third")
+                  navigation.navigate("Search")
                   }
               >
               <Ionicons name="ios-search-sharp" size={24} color="tan" style = {{marginLeft: 45}}/>
               </TouchableOpacity>   
             }}
         />
-        <Stack.Screen name = "Second" component = {HomeSecondScreen} />
-        <Stack.Screen name = "Third" component = {HomeThirdScreen} />
+        <Stack.Screen name = "List" component = {HomeListScreen} options = {{ headerTitleStyle: { color: 'white' } }}/>
+        <Stack.Screen name = "Search" component = {HomeSearchScreen} options = {{ headerTitleStyle: { color: 'white' } }}/>
         <Stack.Screen name = "Singapore Zoo" component = {SingaporeZoo} />
         <Stack.Screen name = "Bukit Timah Nature Reserve" component = {BukitTimah} />
     </Stack.Navigator>

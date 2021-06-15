@@ -2,21 +2,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import * as SQLite from "expo-sqlite";
 
-const db = SQLite.openDatabase("vouchers.db");
 
-function VoucherScreen({ navigation }) {
+function VoucherScreen({navigation}) {
     return (
         <View style = {styles.container}>
             <Text> </Text>
             <Text style={styles.title}> ADD DEALS TO CART NOW! </Text>
             <TouchableOpacity   
-              onPress = { () =>  
-              navigation.navigate("Your Cart")}
+              onPress = { () => alert("Add to cart?")}
             >
             <Image style={styles.image}source={{uri:'https://resize.indiatvnews.com/en/resize/newbucket/715_-/2021/04/mask-1619762934.jpg'}}/>
-            <Text style={styles.text}> 15% OFF FOR MASKS FROM SELECTED OUTLETS </Text>
+            <Text style={styles.text}> 15% OFF FOR MASKS </Text>
+            <Text style={{ fontSize: 20, paddingLeft: 30}}> $9.99 </Text>
             </TouchableOpacity>
         </View>
     )
@@ -28,14 +26,6 @@ function VoucherSecondScreen() {
         </View>
     );
 }
-
-function YourCartScreen() {
-    return (
-        <View style={styles.container}>
-        </View>
-    );
-}
-
 
 const Stack = createStackNavigator();
 
@@ -67,8 +57,7 @@ export default function VoucherStack({ navigation }) {
                     <Ionicons name="cart-outline" size={24} color="tan" style = {{marginLeft: 45}}/>
                     </TouchableOpacity>   
                 }}/>
-            <Stack.Screen name = "Cart" component = {VoucherSecondScreen} options = {{ headerTitleStyle: {color: 'white'}}}/>
-            <Stack.Screen name = "Your Cart" component = {YourCartScreen} options = {{ headerTitleStyle: {color: 'white'}}}/>
+            <Stack.Screen name = "Cart" component = {VoucherSecondScreen} options = {{ headerTitleStyle: {color: 'white'}}}/>       
         </Stack.Navigator>
     )
 }
@@ -100,7 +89,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         paddingTop:10,
         paddingLeft:30,
-        color: 'black'
+        color: 'black',
+        flexDirection: 'row'
     },
 
     title: {
