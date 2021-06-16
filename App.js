@@ -39,10 +39,6 @@ export default function App() {
               <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
-    <View style={styles.container}>
-      <Text>Change something!</Text>
-      <StatusBar style="auto" />
-    </View>
   );
 }
 
