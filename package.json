@@ -30,5 +30,18 @@
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "code-exp",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gelinechong/CODE-EXP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gelinechong/CODE-EXP/issues"
+  },
+  "homepage": "https://github.com/gelinechong/CODE-EXP#readme",
+  "description": ""
 }
