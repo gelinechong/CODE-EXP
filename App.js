@@ -34,7 +34,7 @@ export default function App() {
               activeTintColor: 'tan',
               inactiveTintColor: 'silver',
           }}>
-              <Tab.Screen name="Events" component={HomeScreen} />
+              <Tab.Screen name="Hello" component={HomeScreen} />
               <Tab.Screen name="Voucher" component={VoucherScreen} />
               <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
